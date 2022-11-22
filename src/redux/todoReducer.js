@@ -51,16 +51,16 @@ const todoReducer = (state = initialState, action) => {
             }
         }
         case UPDATE_TODO: {
-            debugger
+            // debugger
             let neededIndex = state.todosArr.findIndex(t => t.id === action.id);
             let stateCopy = {
                 ...state,
                 todosArr: [...state.todosArr]
             }
             stateCopy.todosArr[neededIndex] = {...state.todosArr[neededIndex]}
-            debugger
+            // debugger
             stateCopy.todosArr[neededIndex].title = action.title;
-            debugger
+            // debugger
             return stateCopy;
         }
         case ON_TITLE_CHANGE: {

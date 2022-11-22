@@ -5,7 +5,6 @@ import { createTodoTC, setTodosTC, onTitleChangeAC } from './redux/todoReducer';
 import TodoItem from './components/TodoItem';
 
 
-
 function App() {
   const dispatsh = useDispatch(); 
   useEffect(() => {
@@ -25,6 +24,9 @@ function App() {
     dispatsh(onTitleChangeAC(title))
   }
   const ref = React.createRef();
+
+
+
   return (
     <div className="App">
       <button onClick={createTodo}>Create Todo</button>
