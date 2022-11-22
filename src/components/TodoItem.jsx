@@ -4,7 +4,6 @@ import { deleteTodoTC, onTitleEditChangeAC, updateTodoTC } from '../redux/todoRe
 import s from './TodoItem.module.css'
 import { Form, Field } from 'react-final-form'
 import { getDatabase, onValue, ref, set } from "firebase/database";
-import { database } from '../firebase';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -21,6 +20,7 @@ const TodoItem = (props) => {
     } 
     const [todoDetails, setTodoDetails] = useState({title: 'sfsdfsdf'})
     const todoRef = `todos/${props.id}`;
+    const database = getDatabase();
 
     const handleTitleUpdate = (formData) => {
         try {

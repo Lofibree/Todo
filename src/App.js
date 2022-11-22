@@ -3,9 +3,14 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { createTodoTC, setTodosTC, onTitleChangeAC } from './redux/todoReducer';
 import TodoItem from './components/TodoItem';
+import {initMyFirebase} from './firebase/firebaseInit';
+import LoginWithGoogle from './firebase/LoginWithGoogle';
 
 
 function App() {
+  
+  initMyFirebase();
+
   const dispatsh = useDispatch(); 
   useEffect(() => {
     // debugger
@@ -29,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+      <LoginWithGoogle/>
       <button onClick={createTodo}>Create Todo</button>
       <input value={newTodoText} ref={ref} onChange={onTitleChange} />
       <div className='todos'>{todosEl}</div>
